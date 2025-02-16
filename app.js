@@ -21,6 +21,9 @@ app.use('/api',userRoutes);
 app.use('/',(req,res)=>{
     res.json({message:"Server is working", status:200})
 })
+app.use('/health',(req,res=>{
+    res.json({message:"APIs are working fine", status:200})
+}))
 app.listen(port, ()=>{
     console.log("Server is running on port", port);
 })
