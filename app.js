@@ -18,10 +18,10 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use('/api',userRoutes);
-app.use('/',(req,res)=>{
+app.get('/',(req,res)=>{
     res.json({message:"Server is working", status:200})
 })
-app.use('/health',(req,res)=>{
+app.get('/health',(req,res)=>{
     res.json({message:"APIs are working fine", status:200})
 })
 app.listen(port, ()=>{
